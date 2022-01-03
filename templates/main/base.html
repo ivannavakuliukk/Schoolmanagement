@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel = "stylesheet">
+    <style>
+        .text {
+        text-align:  center;
+        background:#7abecc !important
+        }
+    </style>
+</head>
+    <body class="text">
+   <nav class="py-2 bg-light border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item"><a href="/" class="nav-link link-dark px-2 active" aria-current="page">Main</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link link-dark px-2">About</a></li>
+        <li class="nav-item"><a href="/account" class="nav-link link-dark px-2">Account</a></li>
+          <li class="nav-item"><a href="/students" class="nav-link link-dark px-2">Students</a></li>
+          <li class="nav-item"><a href="/subjects" class="nav-link link-dark px-2">Subjects</a></li>
+          <li class="nav-item"><a href="/classes" class="nav-link link-dark px-2">Classes</a></li>
+      </ul>
+      <ul class="nav">
+          <li class="nav-item">Hello, {{request.user}}</li>
+        <li class="nav-item"><a href="/login" class="nav-link link-dark px-2">Sing in</a></li>
+        <li class="nav-item"><a href="/signup" class="nav-link link-dark px-2">Sign up</a></li>
+          <li class="nav-item"><a href="/logout" class="nav-link link-dark px-2">Log out</a></li>
+      </ul>
+    </div>
+  </nav>
+   <header class="py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <span class="fs-4">School</span>
+      </a>
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+    </div>
+
+  </header>
+   <section class="py-5 text-center container">
+
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+
+          {% block content %} {% endblock %}
+      </div>
+    </div>
+  </section>
+    </body>
+</html>

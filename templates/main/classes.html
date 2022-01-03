@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+{% block title %} Our students{% endblock %}
+{% block content %}
+<h1 class="fw-light">Our classes</h1>
+{% for el in classes %}
+    <div class = "alert alert-warning mt-2">
+         <p> {{el.class_name}}</p>
+    </div>
+{%endfor%}
+{% endblock %}
